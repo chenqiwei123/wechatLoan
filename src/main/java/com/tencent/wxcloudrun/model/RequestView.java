@@ -1,11 +1,11 @@
 package com.tencent.wxcloudrun.model;
 
+import com.tencent.wxcloudrun.tool.LoanTimeUtils;
 import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
+
 @Data
 public class RequestView {
 
@@ -24,4 +24,10 @@ public class RequestView {
     // 错误信息
     private String errorMsg;
 
+    // 当前时间
+    private String time;
+
+    public RequestView() {
+        this.time = LoanTimeUtils.getChinaLogTime();
+    }
 }
